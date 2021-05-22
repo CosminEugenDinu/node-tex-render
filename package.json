@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-html-parser": "^3.3.3",
+    "tex-to-svg": "github:CosminEugenDinu/TeX-to-SVG#patch-1"
+  }
+}
