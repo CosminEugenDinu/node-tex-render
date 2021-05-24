@@ -4,30 +4,71 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        h1{
-            background-color: ghostwhite;
-        }
-        h1,h2,h3 {
-            text-align: center;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="syntax-light.css">
     <title>Hello_Document</title>
   </head>
   <body style="margin: 5mm">
-      <h1>Simple test</h1>
-      <h3>MathJax Server Render</h3>
+    <h1>Simple test</h1>
+    <h3>MathJax Server Render</h3>
     <i style="font-size: 20pt">\frac{n!}{k!(n-k)!} = \binom{n}{k}</i>
     <i style="font-size: 9pt">\frac{n!}{k!(n-k)!} = \binom{n}{k}</i>
     <pre>
-    <code>
-    def func(x):
-        print("hello")
-        return x**2
-    </code>
-   </pre>
+```py
+def func(x):
+    sum = x + 2
+    print("hello")
+    return sum
+```
+    </pre>
+    <pre>
+```js
+import fs from "fs";
+import path from "path";
+import express from "express";
+import { texToSvg } from "./src/tex-to-svg";
+import { parse } from "node-html-parser";
+import syntaxHighlight from "./src/highlight";
+
+const app = express();
+
+app.use("/", express.static(path.join(__dirname, "./public")));
+
+app.get("/", (req, res) => {
+  fs.readFile("./documents/src/hello.html", "utf8", async (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    const root = parse(data);
+
+    // select all <i>LaTeX</i> elements, assuming their text content is TeX code
+    const all_i = root.querySelectorAll("i");
+    for (const i of all_i) {
+      const texStr = i.innerHTML;
+      // generate SVG from TeX
+      const SVGEquation = texToSvg(texStr);
+      // replace text content of element
+      i.innerHTML = SVGEquation;
+    }
+
+    const all_pre = root.querySelectorAll("pre");
+    for (const pre of all_pre) {
+      const mdStr = pre.innerHTML;
+      // parse markdown content and convert to html with css classes
+      const highlighted = await syntaxHighlight(mdStr);
+      // replace text content of element
+      pre.innerHTML = highlighted.contents;
+    }
+    res.send(root.toString());
+    // syntaxHighlight(root.toString()).then(r => res.send(r.contents))
+  });
+});
+
+app.listen(8080, () => {
+  console.log("server started on port 8080");
+});
+```
+  </pre>
   </body>
 </html>

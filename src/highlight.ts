@@ -23,6 +23,6 @@ const processor = unified()
     .use(html)
 
 
-export async function process(str: string) {
+export default async function syntaxHighlight(str: string) {
     return await processor.process(str);
 }

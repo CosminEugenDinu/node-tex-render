@@ -1,0 +1,10 @@
+.hljs {
+  font-family: Consolas, "Courier New", Courier, monospace;
+}
+.hljs-keyword {
+  font-style: italic;
+  font-weight: bolder;
+}
+.hljs-string {
+    color: firebrick;
+}

@@ -1,0 +1,11 @@
+h1 {
+  background-color: ghostwhite;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
