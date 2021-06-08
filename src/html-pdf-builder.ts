@@ -7,7 +7,7 @@ const puppeteer = require("puppeteer");
     waitUntil: "networkidle0",
   });
   await page.pdf({
-    path: "./articles/build/FAI-Subiecte.pdf",
+    path: "./articles/built/FAI-Subiecte.pdf",
     format: "A6",
     printBackground: true,
   });

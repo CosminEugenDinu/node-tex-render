@@ -1,27 +1,613 @@
 <!DOCTYPE html>
 <html lang="ro">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello_Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAI-Subiecte</title>
   </head>
+
   <body style="margin: 5mm">
-    <h1>Simple test</h1>
-    <h3>MathJax Server Render</h3>
-    <i style="font-size: 20pt">\frac{n!}{k!(n-k)!} = \binom{n}{k}</i>
-    <i style="font-size: 9pt">\frac{n!}{k!(n-k)!} = \binom{n}{k}</i>
-    <pre>
-```py
-def func(x):
-    sum = x + 2
-    print("hello")
-    return sum
-```
-    </pre>
-    <pre>
-# This is a md header 1.
-## This is a md header 2.
-  </pre>
+    <h1>FAI - subiecte lucrari</h1>
+    <ol>
+      <li>
+        Un sistem de m ecuatii liniare cu n necunoscute este compatibil daca:
+        <ul>
+          <li class="checkmark"> <i>\checkmark</i> determinantii caracteristici ai sistemului sunt egali cu zero </li>
+          <li> Rangul matricei coeficientilor este diferit de rangul matricei extinse a sistemului </li>
+          <li> Rangul matricei coeficientilor este mai mare decat numarul necunoscutelor </li>
+          <li> Determinantul matricei coeficientilor este diferit de zero </li>
+        </ul>
+      </li>
+      <li>
+        Un sistem omogen de m ecuatii liniare cu n necunoscute admite si soluii nenule daca:
+        <ul>
+          <li class="checkmark"> <i>\checkmark</i>
+            Rangul matricei coeficientilor este mai mic decat numarul necunoscutelor
+          </li>
+          <li>
+            Rangul matricei coeficientilor este egal cu numarul necunoscutelor
+          </li>
+          <li>
+            Determinantul matricei coeficientilor este nul
+          </li>
+          <li>
+            Rangul matricei coeficientilor este egal cu numarul ecuatiilor sistemului
+          </li>
+        </ul>
+      </li>
+      <li>
+        O matrice nenula cu m linii si n coloane, cu elemente numere reale, are
+        rangul <i>r \in \mathbb{N}^*</i> daca:
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark</i>
+            Exista in A un minor nenul de ordinul r si orice minor de ordinul r+1 din A este nul.
+           </li>
+          <li> <i>r = max(m,n);</i> </li>
+          <li> <i>r > max(m,n);</i> </li>
+          <li> <i>r \leq min(m,n);</i> </li>
+          <li>Aplicand algoritmul lui Gauss pentru calculul rangului matricei A se vor obtine cel putin r + 1 pivoti nenuli</li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine valoarea parametrului real m astfel incat vectorii
+        urmatori sa fie linear dependenti si pentru valoarea gasita, relatia de
+        dependenta dintre ei
+        <i>v_1=(1,3,2),</i><i>v_2=(1,-2,3),</i><i>v_3=(0,5,m)</i>:
+        <ul>
+          <li class="checkmark"><i>\checkmark m = -1, v_1-v_2-v_3 = (0,0,0)</i></li>
+          <li> <i>m = 1, v_1-v_2+v_3 = (0,0,0)</i> </li>
+          <li> <i>m = -1, 2v_1-v_2+v_3 = (0,0,0)</i> </li>
+          <li> <i>m = 0, -v_1+v_2-2v_3=(0,0,0)</i> </li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine valoarea parametrului real m astfel incat vectorii
+        urmatori sa fie linear dependenti precum si relatia de
+        dependenta dintre ei
+        <i>v_1=(1,4,5),</i><i>v_2=(-1,3,m),</i><i>v_3=(2,-1,1)</i>:
+        <ul>
+          <li class="checkmark"><i>
+            \checkmark m = 2, -5v_1 + 9v_2 + 7v_3 = (0,0,0)</i></li>
+          <li><i>m = 1, 5v_1 - 9v_2 + 7v_3 = (0,0,0)</i></li>
+          <li><i>m = -2, -5v_1 + 9v_2 - 7v_3 = (0,0,0)</i></li>
+          <li><i>m = 0, 5v_1 - 9v_2 - 7v_3 = (0,0,0)</i></li>
+        </ul>
+      </li>
+      <li>
+        Aratati ca matricea urmatoare, A, este inversabila si calculati suma S a
+        elementelor din linia a treia a matricei sale inverse:
+        <i>A=\begin{pmatrix}2 & 2 & 3\\ 1 & -1 & 0\\ -1 & 2 & 1\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"><i>\checkmark S=9</i></li>
+          <li><i>S = 7</i></li>
+          <li><i>S = -7</i></li>
+          <li><i>S = -2</i></li>
+        </ul>
+      </li>
+      <li>
+        Aratati ca matricea urmatoare, A, este inversabila si calculati suma S a
+        elementelor din linia a treia a matricei sale inverse:
+        <i>A = \begin{pmatrix}2&3&1\\3&6&2\\1&2&1\end{pmatrix}</i>
+        <ul>
+          <li><i class="checkmark">\checkmark S = 2</i></li>
+          <li><i>S = 1</i></li>
+          <li><i>S = -1</i></li>
+          <li><i>S = -2</i></li>
+        </ul>
+      </li>
+      <li>
+        Fie matricea patratica, de ordinul 3:
+        <i>A = \begin{pmatrix}1&0&1\\0&1&1\\1&1&1\end{pmatrix}</i><br/>
+        Aratati ca A este inversabila si calculati suma elementelor din linia 1 a matricei <i>A^{-1}</i>
+        <ul>
+          <li class="checkmark"><i>\checkmark S = 0</i></li>
+          <li><i>S = 2</i></li>
+          <li><i>S = -2</i></li>
+          <li><i>S = -1</i></li>
+        </ul>
+      </li>
+      <li>
+        Aratati ca matricea urmatoare, A, este inversabila si calculati determinantul matricei sale inverse
+         <i>A = \begin{pmatrix}2&2&-1\\2&-1&2\\-1&2&2\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark Det(A^{-1}) = -\frac{1}{27}</i> </li>
+          <li> <i>Det(A^{-1}) = -27</i> </li>
+          <li> <i>Det(A^{-1}) = 9</i> </li>
+          <li> <i>Det(A^{-1}) = \frac{1}{27}</i> </li>
+        </ul>
+      </li>
+      <li>
+        Aratati ca matricea urmatoare, A, este inversabila si calculati determinantul matricei sale inverse
+         <i>A = \begin{pmatrix}1&1&-1\\3&-2&2\\2&3&-2\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark Det(A^{-1}) = -\frac{1}{5}</i> </li>
+          <li> <i>Det(A^{-1}) = \frac{1}{5}</i> </li>
+          <li> <i>Det(A^{-1}) = -5</i> </li>
+          <li> <i>Det(A^{-1}) = 5</i> </li>
+        </ul>
+      </li>
+      <li>
+        Fie A o matrice patratica de ordinul 3.<br />
+        Stiind ca Det(A) = -3, precizati care din afirmatiile urmatoare este
+        adevarata:
+        <ul>
+          <li class="checkmark"> <i>\checkmark Det(-2A) = -12</i> </li>
+          <li> <i>Det(-A) = 3</i> </li>
+          <li> <i>Det(-3A) = 9</i> </li>
+          <li> <i>Det(5A) = -15</i> </li>
+        </ul>
+      </li>
+      <li>
+        Fie A o matrice patratica de ordinul 3.<br />
+        Stiind ca Det(A) = 5, precizati care din afirmatiile urmatoare este
+        adevarata:
+        <ul>
+          <li class="checkmark"> <i>\checkmark Det(-2A) = 20</i> </li>
+          <li> <i>Det(-A) = -5</i> </li>
+          <li> <i>Det(-3A) = -45</i> </li>
+          <li> <i>Det(3A) = 15</i> </li>
+        </ul>
+      </li>
+      <li>
+        Sa se calculeze determinantul patratului matricei A, stiind ca:
+        <i>A = \begin{pmatrix} 6 & 5\\ -3 & -3\\ \end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"><i>\checkmark Det(A^2)=9</i></li>
+          <li> <i>Det(A^2) = 99</i> </li>
+          <li> <i>Det(A^2) = 112</i> </li>
+          <li> <i>Det(A^2) = 79</i> </li>
+        </ul>
+      </li>
+      <li>
+        Sa se calculeze determinantul patratului matricei A, stiind ca:
+        <i>A = \begin{pmatrix}4&3\\-6&-5\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"><i>\checkmark Det(A^2) = 4</i></li>
+          <li> <i>Det(A^2) = 76</i> </li>
+          <li> <i>Det(A^2) = 20</i> </li>
+          <li> <i>Det(A^2) = 18</i> </li>
+        </ul>
+      </li>
+      <li>
+        Sa se calculeze determinantul patratului matricei A, stiind ca:
+        <i>A = \begin{pmatrix}3&-2\\-2&3\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"><i>\checkmark Det(A^2) = 25</i></li>
+          <li> <i>Det(A^2) = 9</i> </li>
+          <li> <i>Det(A^2) = 16</i> </li>
+          <li> <i>Det(A^2) = 36</i> </li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine polinomul caracteristic al aplicatiei liniare f, a carei matrice A, asociata in baza canonica, este urmatoarea:
+        <i
+          >f: \mathbb{R}^2 \to \mathbb{R}^2; A =
+          \begin{pmatrix}4&1\\-2&1\end{pmatrix}</i
+        >
+        <ul>
+          <li class="checkmark"> <i>\checkmark P(\lambda)= \lambda^2 - 5\lambda + 6</i> </li>
+          <li> <i>P(\lambda) = \lambda^2 + 5\lambda + 6</i> </li>
+          <li> <i>P(\lambda) = \lambda^2 - 5\lambda - 6</i> </li>
+          <li> <i>P(\lambda) = \lambda^2 + 5\lambda - 6</i> </li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine polinomul caracteristic al aplicatiei liniare f, a carei matrice A, asociata in baza canonica, este urmatoarea:
+        <i
+          >f: \mathbb{R}^2 \to \mathbb{R}^2; A =
+          \begin{pmatrix}-4&-3\\-2&-5\end{pmatrix}</i
+        >
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark P(\lambda) = \lambda^2 + 9\lambda + 14</i>
+          </li>
+          <li> <i>P(\lambda) = \lambda^2 + 9\lambda - 14</i> </li>
+          <li> <i>P(\lambda) = \lambda^2 - 9\lambda - 14</i> </li>
+          <li> <i>P(\lambda) = \lambda^2 - 9\lambda + 14</i> </li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine polinomul caracteristic al aplicatiei liniare f, a carei matrice A, asociata in baza canonica, este urmatoarea:
+        <i
+          >f: \mathbb{R}^2 \to \mathbb{R}^2; A =
+          \begin{pmatrix}-2&1\\-4&3\end{pmatrix}</i
+        >
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark P(\lambda) = \lambda^2 - \lambda - 2</i>
+          </li>
+          <li> <i>P(\lambda) = \lambda^2 + \lambda - 2</i> </li>
+          <li> <i>P(\lambda) = \lambda^2 - 3\lambda + 2</i> </li>
+          <li> <i>P(\lambda) = \lambda^2 + 3\lambda + 2</i> </li>
+        </ul>
+      </li>
+      <li>
+        Sa se calculeze rangul matricei urmatoare:
+        <i>A = \begin{pmatrix}3&2&5&4\\2&1&3&3\\1&2&3&0\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark rang(A) = 2</i> </li>
+          <li><i>rang(A) = 3</i></li>
+          <li><i>rang(A) = 1</i></li>
+          <li><i>rang(A) = 4</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se calculeze rangul matricei urmatoare:
+        <i>A = \begin{pmatrix}2&-1&1&2\\1&1&2&1\\3&-2&1&3\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark rang(A) = 2</i> </li>
+          <li><i>rang(A) = 3</i></li>
+          <li><i>rang(A) = 1</i></li>
+          <li><i>rang(A) = 4</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se calculeze rangul matricei urmatoare:
+        <i>A = \begin{pmatrix}1&-2&0&1\\3&-1&-2&0\\2&1&-2&-1\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark rang(A) = 2</i> </li>
+          <li><i>rang(A) = 3</i></li>
+          <li><i>rang(A) = 1</i></li>
+          <li><i>rang(A) = 4</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine parametrul real m astfel incat vectorii urmatori sa fie
+        liniar independenti in spatiul vectorial tridimensional
+        <i>\mathbb{R}^3 : v_1 = (1,4,5), v_2 = (2,-1,1), v_3 = (-1,3,m)</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark m \in \mathbb{R} - \{2\}</i> </li>
+          <li> <i>m \in \mathbb{R} - \{-2\}</i> </li>
+          <li> <i>m \in \mathbb{R} - \{0\}</i> </li>
+          <li>Vectorii sunt linear independenti pentru orice <i>m \in \mathbb{R}</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine parametrul real m astfel incat vectorii urmatori sa fie
+        liniar independenti in spatiul vectorial tridimensional
+        <i>\mathbb{R}^3 : v_1 = (2,1,-3), v_2 = (-1,2,4), v_3 = (3,-4,m)</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark m \in \mathbb{R} - \{-10\}</i> </li>
+          <li> <i>m \in \mathbb{R} - \{10\}</i> </li>
+          <li> <i>m \in \mathbb{R} - \{0\}</i> </li>
+          <li>Vectorii sunt linear independenti pentru orice <i>m \in \mathbb{R}</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine parametrul real m astfel incat vectorii urmatori sa fie
+        liniar independenti in spatiul vectorial tridimensional
+        <i>\mathbb{R}^3 : v_1 = (-1,2,1), v_2 = (1,-2,m), v_3 = (0,1,1)</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark m \in \mathbb{R} - \{-1\}</i> </li>
+          <li> <i>m \in \mathbb{R} - \{0\}</i> </li>
+          <li> <i>m \in \mathbb{R} - \{1\}</i> </li>
+          <li>Vectorii sunt linear dependenti pentru orice <i>m \in \mathbb{R}</i></li>
+        </ul>
+      </li>
+      <li>
+        Calculati determinantul matricei:
+        <i>A = \begin{pmatrix}4&-3\\1&-1\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark Det(A) = -1</i> </li>
+          <li><i>Det(A) = 1</i></li>
+          <li><i>Det(A) = -12</i></li>
+          <li><i>Det(A) = -4</i></li>
+        </ul>
+      </li>
+      <li>
+        Calculati determinantul matricei:
+        <i>A = \begin{pmatrix}8&3\\4&2\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark Det(A) = 4</i> </li>
+          <li><i>Det(A) = 10</i></li>
+          <li><i>Det(A) = 17</i></li>
+          <li><i>Det(A) = 7</i></li>
+        </ul>
+      </li>
+      <li>
+        Calculati determinantul matricei:
+        <i>A = \begin{pmatrix}3&1\\5&2\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark Det(A) = 1</i> </li>
+          <li><i>Det(A) = -1</i></li>
+          <li><i>Det(A) = 13</i></li>
+          <li><i>Det(A) = 7</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se calculeze suma S a elementelor matricei inverse a matricei urmatoare:
+        <i>\begin{pmatrix}-3&7\\-2&5\end{pmatrix} </i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark S = 3</i>
+          </li>
+          <li><i>S = 5</i></li>
+          <li><i>S = -2</i></li>
+          <li><i>S = -3</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se calculeze suma S a elementelor matricei inverse a matricei urmatoare:
+        <i>A = \begin{pmatrix}5&8\\2&3\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"><i>\checkmark S = 2</i></li>
+          <li><i>S = 5</i></li>
+          <li><i>S = -2</i></li>
+          <li><i>S = -3</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se calculeze suma S a elementelor matricei inverse a matricei urmatoare:
+        <i>A = \begin{pmatrix}3&1\\5&2\end{pmatrix}</i>
+        <ul>
+          <li class="checkmark"><i>\checkmark S = -1</i></li>
+          <li><i>S = 10</i></li>
+          <li><i>S = 2</i></li>
+          <li><i>S = 3</i></li>
+        </ul>
+      </li>
+      <li>
+        Determinati valoarea parametrul real m astfel incat vectorii urmatori :
+        <i>v_1=(1,1,-1),</i><i>v_2=(1,-1,m),</i><i>v_3=(-1,1,1)</i> sa formeze o
+        baza in spatiul vectorial <i>\mathbb{R}^3</i>, iar pentru m=1 calculati
+        coordonatele vectorului <i>u=(6,2,-12)</i> in aceasta baza.
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark m \neq -1, u = (4,-3,-5)</i>
+          </li>
+          <li> <i>m \neq -2, u = (4,3,5)</i> </li>
+          <li> <i>m \neq 1, u = (-4,3,-5)</i> </li>
+          <li> <i>m = -1, u = (-4,-3,5)</i> </li>
+        </ul>
+      </li>
+      <li>
+        Fie un sistem algebric, liniar, de n ecuatii cu n necunoscute, scris sub
+        forma matriceala <i>A \cdot X = B</i>. Sistemul este compatibil
+        determinat daca si numai daca:
+        <ul>
+          <li class="checkmark"> <i>\checkmark Det(A) \neq 0 </i> </li>
+          <li class="checkmark"><i>\checkmark</i> Matricea coeficientilor, A, este inversabila</li>
+          <li>Matricea coeficientilor, A, nu este inversabila</li>
+          <li><i>rang(A) \neq rang(A,B)</i></li>
+          <li><i>rang(A) \neq rang(A,B),</i> unde<i>(A,B)</i> este matricea extinsa a sistemului</li>
+          <li>Sistemul are cel putin o necunoscuta secundara.</li>
+        </ul>
+      </li>
+      <li>
+        Fie un sistem algebric, liniar, de m ecuatii cu n necunoscute, scris sub forma matriceala <i>A \cdot X = B, m \neq n</i>. Sistemul este compatibil daca si numai daca:
+        <ul>
+          <li class="checkmark"><i>rangA = rang(A,B),</i> unde <i>(A,B)</i> este matricea extinsa a sistemului</li>
+          <li>Exista cel putin un minor caracteristic nenul</li>
+          <li>Sistemul nu are nici o necunoscuta secundara</li>
+          <li>Rangul matricei extinse a sistemului este mai mare decat numarul ecuatiilor</li>
+        </ul>
+      </li>
+      <li>
+        Fie A o matrice patratica de ordinul n. Matricea A este inversabila
+        daca:
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark Det(A) \neq 0</i>
+          </li>
+          <li class="checkmark">
+            <i> \checkmark</i>Exista o matrice patratica de ordinul n, notata cu
+            <i>A^{-1},</i> astfel incat
+            <i> A \cdot A^{-1} = A^{-1} \cdot A = I_n </i>
+          </li>
+          <li>
+            <i>Det(A) = 0</i>
+          </li>
+          <li>
+            <i>Det(A) \cdot Det(A^{-1}) \neq 1</i>
+          </li>
+          <li>
+            Exista o matrice patratica de ordinul n, notata cu <i>A^{-1}</i>, astfel incat <i>A \cdot A^{-1} = A^{-1} \cdot A \neq I_n</i>
+          </li>
+          <li>
+            Exista o matrice patratica de ordinul n, notata cu <i>A^{-1}</i>, astfel incat <i>A \cdot A^{-1} = A^{-1} \cdot A = O_{n,n}</i>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine matricea diagonalizatoare T pentru aplicatia liniara f a
+        carei matrice asociata A in baza canonica este:
+        <i>
+          f : \mathbb{R}^2 \to \mathbb{R}^2; A =
+          \begin{pmatrix}-2&1\\-4&3\end{pmatrix}
+        </i>
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark T = \begin{pmatrix}1&1\\4&1\end{pmatrix}</i>
+          </li>
+          <li> <i>T = \begin{pmatrix}1&-1\\4&1\end{pmatrix}</i> </li>
+          <li> <i>T = \begin{pmatrix}1&-1\\-4&1\end{pmatrix}</i> </li>
+          <li> <i>T = \begin{pmatrix}-1&1\\-4&-1\end{pmatrix}</i> </li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine matricea diagonalizatoare T pentru aplicatia liniara f a
+        carei matrice asociata A in baza canonica este:
+        <i>
+          f : \mathbb{R}^2 \to \mathbb{R}^2; A =
+          \begin{pmatrix}-5&2\\1&-6\end{pmatrix}
+        </i>
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark T = \begin{pmatrix}2&-1\\1&1\end{pmatrix}</i>
+          </li>
+          <li> <i>T = \begin{pmatrix}-2&-1\\1&1\end{pmatrix}</i> </li>
+          <li> <i>T = \begin{pmatrix}2&-1\\1&-1\end{pmatrix}</i> </li>
+          <li> <i>T = \begin{pmatrix}-2&-1\\-1&-1\end{pmatrix}</i> </li>
+        </ul>
+      </li>
+      <li>
+        Fie operatorul liniar f definit astfel:
+        <i>f : \mathbb{R}^3 \to \mathbb{R}^3,</i>
+        <i>f(x_1,x_2,x_3)</i>
+        <i>=(2x_1-3x_2+x_3, x_1+5x_2-3x_3, 5x_1+12x_2-8x_3)</i><br/>Sa se determine dimensiunile subspatiilor vectoriale Ker(f) si Im(f).
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark Dim(Ker(f)) = 1, Dim(Im(f)) = 2</i>
+          </li>
+          <li><i>Dim(Ker(f)) = 2, Dim(Im(f)) = 1</i></li>
+          <li><i>Dim(Ker(f)) = 2, Dim(Im(f)) = 2</i></li>
+          <li><i>Dim(Ker(f)) = 0, Dim(Im(f)) = 3</i></li>
+        </ul>
+      </li>
+      <li>
+        Fie operatorul liniar f definit astfel:
+        <i>f : \mathbb{R}^3 \to \mathbb{R}^3,</i>
+        <i>f(x_1,x_2,x_3)</i>
+        <i>=(x_1+x_2-x_3, x_1-x_2+x_3, 5x_1-x_2+x_3)</i><br/>
+        Sa se determine dimensiunile subspatiilor vectoriale Ker(f) si Im(f).
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark Dim(Ker(f)) = 1, Dim(Im(f)) = 2</i>
+          </li>
+          <li><i>Dim(Ker(f)) = 2, Dim(Im(f)) = 1</i></li>
+          <li><i>Dim(Ker(f)) = 2, Dim(Im(f)) = 2</i></li>
+          <li><i>Dim(Ker(f)) = 0, Dim(Im(f)) = 3</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se arate ca vectorii urmatori sunt linear dependenti si sa se determine relatia de dependenta dintre ei:<br/>
+        <i> v_1=(2,1,-1), v_2=(1,-1,2), v_3=(4,-1,3) </i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark v_1 + 2v_2 - v_3 = O_3</i> </li>
+          <li><i>v_1 - v_2 - v_3 = O_3</i></li>
+          <li><i>v_1 + 2v_2 - 2v_3 = O_3</i></li>
+          <li><i>v_1 + v_2 - 2v_3 = O_3</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se arate ca vectorii urmatori sunt linear dependenti si sa se determine relatia de dependenta dintre ei:<br/>
+        <i> v_1=(2,-5,3), v_2=(3,-8,1), v_3=(1,-2,5) </i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark 2v_1 - v_2 - v_3 = O_3</i> </li>
+          <li><i>v_1 - v_2 - v_3 = O_3</i></li>
+          <li><i>v_1 + 2v_2 - v_3 = O_3</i></li>
+          <li><i>2v_1 + v_2 - 2v_3 = O_3</i></li>
+        </ul>
+      </li>
+      <li>
+        Determinati dimensiunea subspatiului W generat de vectorii urmatori din
+        <i>\mathbb{R}^3 : v_1=(2,1,3), v_2=(-1,1,-2), v_3=(1,2,1), v_4=(2,1,3)</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark Dim(W) = 2</i> </li>
+          <li><i>Dim(W) = 1</i></li>
+          <li><i>Dim(W) = 3</i></li>
+          <li><i>Dim(W) = 4</i></li>
+        </ul>
+      </li>
+      <li>
+        Determinati dimensiunea subspatiului W generat de vectorii urmatori din
+        <i>\mathbb{R}^3 : v_1=(2,1,5), v_2=(-3,9,-6), v_3=(4,2,10), v_4=(-5,1,-12)</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark Dim(W) = 2</i> </li>
+          <li><i>Dim(W) = 1</i></li>
+          <li><i>Dim(W) = 3</i></li>
+          <li><i>Dim(W) = 4</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine valorile proprii ale aplicatiei liniare f, a carei matrice A, asociata in baza canonica, este urmatoarea:
+        <i>f : \mathbb{R}^2 \to \mathbb{R}^2; A = \begin{pmatrix}11&16\\-2&-1\end{pmatrix}</i>
+        <ul>
+          <li> <i class="checkmark">\checkmark \lambda_1=3; \lambda_2=7 </i> </li>
+          <li><i>\lambda_1 = -3; \lambda_2 = -7</i></li>
+          <li><i>\lambda_1 = 2; \lambda_2 = -7</i></li>
+          <li><i>\lambda_1 = -3; \lambda_2 = 7</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine valorile proprii ale aplicatiei liniare f, a carei matrice A, asociata in baza canonica, este urmatoarea:
+        <i>f : \mathbb{R}^2 \to \mathbb{R}^2; A = \begin{pmatrix}-4&-3\\-2&-5\end{pmatrix}</i>
+        <ul>
+          <li> <i class="checkmark">\checkmark \lambda_1 = -2; \lambda_2 = -7</i> </li>
+          <li><i>\lambda_1 = -2; \lambda_2 = 7</i></li>
+          <li><i>\lambda_1 = 2; \lambda_2 = -7</i></li>
+          <li><i>\lambda_1 = 2; \lambda_2 = 7</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine valorile proprii ale aplicatiei liniare f, a carei matrice A, asociata in baza canonica, este urmatoarea:
+        <i>f : \mathbb{R}^2 \to \mathbb{R}^2; A = \begin{pmatrix}4&1\\-2&1\end{pmatrix}</i>
+        <ul>
+          <li> <i class="checkmark">\checkmark \lambda_1 = 2; \lambda_2 = 3</i> </li>
+          <li><i>\lambda_1 = -2; \lambda_2 = -3</i></li>
+          <li><i>\lambda_1 = 1; \lambda_2 = -6</i></li>
+          <li><i>\lambda_1 = 2; \lambda_2 = -3</i></li>
+        </ul>
+      </li>
+      <li>
+        Stiind ca vectorii urmatori formeaza o baza in spatiul vectorial tridimensional
+        <i>\mathbb{R}^3 : v_1 = (1,-4,2),</i><i>v_2 = (2,1,-1),</i><i>v_3 = (-2,2,3),</i> calculati coordonatele vectorului <i>u = (-5,-1,9)</i> in aceasta baza.
+        <ul>
+          <li class="checkmark"><i>\checkmark u = (1,-1,2)</i></li>
+          <li><i>u = (1,1,2)</i></li>
+          <li><i>u = (-1,1,2)</i></li>
+          <li><i>u = (1,1,-2)</i></li>
+        </ul>
+      </li>
+      <li>
+        Aratati ca vectorii urmatori formeaza o baza in spatiul vectorial tridimensional
+        <i>\mathbb{R}^3 : v_1 = (1,3,2),</i><i>v_2 = (1,-2,3),</i><i>v_3 = (-1,2,-2),</i> calculati coordonatele vectorului <i>u = (0,5,2)</i> in aceasta baza.
+        <ul>
+          <li class="checkmark"><i>\checkmark u = (1,2,3)</i></li>
+          <li><i>u = (1,-2,3)</i></li>
+          <li><i>u = (0,1,2)</i></li>
+          <li><i>u = (1,-1,2)</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine cel mai mare divizor comun al numerelor:<br/>
+        <i>n_1=</i>11432775; <i>n_2=</i>15265170
+        <ul>
+          <li class="checkmark"><i>\checkmark d = 32205</i></li>
+          <li><i>d = 161025</i></li>
+          <li><i>d = 193230</i></li>
+          <li><i>d = 483075</i></li>
+        </ul>
+      </li>
+      <li>
+        Care este ordinul elementului <i>\hat{4}</i> in grupul ciclic <i>(\mathbb{Z}_7^*,\cdot)</i>
+        <ul>
+          <li class="checkmark"> <i>\checkmark Ord(\hat{4}) = 4</i> </li>
+          <li><i>Ord(\hat{4}) = 5</i></li>
+          <li><i>Ord(\hat{4}) = 3</i></li>
+          <li><i>Ord(\hat{4}) = 2</i></li>
+        </ul>
+      </li>
+      <li>
+        Sa se determine elementele inversabile si caracteristica lui Euler ale monoidului
+        <i>U(\mathbb{Z}_{18}^*)</i>
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark U(\mathbb{Z}_{18}^*) = \{1,5,7,11,13,17\}; \varphi(18) = 6</i>
+          </li>
+          <li>
+            <i>U(\mathbb{Z}_{18}^*) = \{2,4,6,8,10,12,14,16\}; \varphi(18) = 8</i>
+          </li>
+          <li>
+            <i>U(\mathbb{Z}_{18}^*) = \{1,3,6,9,12,15\}; \varphi(18) = 8</i>
+          </li>
+          <li>
+            <i>U(\mathbb{Z}_{18}^*) = \{1,5,7,9,11,13,17\}; \varphi(18) = 7</i>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Teorema lui Lagrange pentru grupuri finite este:
+        <ul>
+          <li class="checkmark">
+            <i>\checkmark</i> Ordinul oricarui subgrup al unui grup finit este divizor al ordinului grupului</li>
+          <li>Daca p este un numar prim, atunci (p - 1) != -1(mod p)</li>
+          <li>Orice grup finit de ordin un numar prim este grup ciclic</li>
+          <li>Daca p este un numar prim si <i>a \in \mathbb{Z}</i> este un numar intreg, prim cu p, atunci <i>a^{p-1} = \hat{1}(mod\:p)</i>
+          </li>
+        </ul>
+      </li>
+    </ol>
   </body>
 </html>

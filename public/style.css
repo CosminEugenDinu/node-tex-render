@@ -6,6 +6,17 @@ h2,
 h3 {
   text-align: center;
 }
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+li {
+  margin: 0.5em;
+}
+body ol > li {
+  margin-bottom: 3em;
+}
+
+.checkmark {
+  background-color: rgb(255, 255, 150);
 }
