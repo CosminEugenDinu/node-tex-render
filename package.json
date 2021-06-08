@@ -4,11 +4,15 @@
     "highlight.js": "^10.7.2",
     "mathjax-full": "^3.1.4",
     "node-html-parser": "^3.3.3",
+    "puppeteer": "^10.0.0",
     "rehype-highlight": "^4.1.0",
     "rehype-stringify": "^8.0.0",
     "remark-parse": "^9.0.0",
     "remark-rehype": "^8.1.0",
     "unified": "^9.2.1"
+  },
+  "nodemonConfig": {
+    "ignore": ["src/html-pdf-builder.ts"]
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
