@@ -5,7 +5,8 @@ import syntaxHighlight from "./text-processors/md2html";
 
 export default async function htmlTexBuilder(
   htmlFilePath: string,
-  cssFilePaths: string[]
+  cssFilePaths: string[],
+  jsFilePaths: string[]
 ) {
   try {
     const documentBuffer = await readFile(htmlFilePath);
@@ -13,15 +14,29 @@ export default async function htmlTexBuilder(
     const cssFileBufPromises = cssFilePaths.map((cssPath) => {
       return readFile(cssPath);
     });
+    const jsFileBufPromises = jsFilePaths.map((jsPath) => {
+      return readFile(jsPath);
+    });
 
     // embed styles
     const headElem = document.querySelector("head");
     const style = new HTMLElement("style", {}, "", headElem);
 
-    style.textContent = (await Promise.all(cssFileBufPromises)).map(buf => {
-      return buf.toString();
-    }).join('');
+    style.textContent = (await Promise.all(cssFileBufPromises))
+      .map((buf) => {
+        return buf.toString();
+      })
+      .join("");
     headElem.appendChild(style);
+
+    const bodyElem = document.querySelector("body");
+    const js = new HTMLElement("script", {}, "", bodyElem);
+    js.textContent = (await Promise.all(jsFileBufPromises))
+      .map((buf) => {
+        return buf.toString();
+      })
+      .join("");
+    bodyElem.appendChild(js);
 
     // convert html-latex to svg
     // select all <i>LaTeX</i> elements, assuming their text content is TeX code

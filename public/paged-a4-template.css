@@ -1,0 +1,15 @@
+@page:first {
+  @bottom-center {
+    content: "0";
+  }
+}
+@page {
+  size: A4;
+  margin: 20mm;
+  @bottom-center {
+    content: counter(page);
+  }
+}
+h1 {
+  background-color: ghostwhite;
+}

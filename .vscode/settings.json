@@ -1,5 +1,16 @@
 {
-    "code-runner.executorMapByFileExtension": {
-        ".html": "ts-node tools/html-pdf-builder.ts"
-    }
+  "code-runner.executorMapByFileExtension": {
+    ".html": "ts-node tools/html-pdf-builder.ts $workspaceRoot/articles/built/$dir.html",
+    ".css": "ts-node tools/html-pdf-builder.ts"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  // "prettier.printWidth": 90,
+  "editor.wordWrapColumn": 80,
+  "editor.tabSize": 2,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

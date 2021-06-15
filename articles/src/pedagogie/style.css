@@ -1,0 +1,51 @@
+#first-page {
+  page: firstPage;
+}
+@page firstPage {
+  @bottom-center {
+    content: " ";
+  }
+}
+@page {
+  size: A4;
+  margin: 20mm;
+  @bottom-center {
+    content: counter(page);
+  }
+}
+.page-break {
+  break-before: always;
+}
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+body {
+  font-size: 12pt;
+}
+h1 {
+  font-size: 14pt;
+}
+h2,
+h3 {
+  font-size: 12pt;
+}
+h2 {
+  text-align: center;
+}
+h3,
+p {
+  margin: 2px;
+}
+section h3 {
+  margin-top: 20px;
+}
+section p {
+  text-indent: 10mm;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0;
+  text-indent: 10mm;
+}

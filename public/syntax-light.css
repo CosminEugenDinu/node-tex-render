@@ -6,5 +6,8 @@
   font-weight: bolder;
 }
 .hljs-string {
-    color: firebrick;
+  color: firebrick;
+}
+.hljs-number {
+  font-weight: bolder;
 }

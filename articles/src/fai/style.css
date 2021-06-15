@@ -1,4 +1,20 @@
-h1 {
+@page {
+  size: A4;
+  margin: 3mm 3mm 7mm 3mm;
+  @bottom-center {
+    content: counter(page);
+  }
+}
+* {
+  font-size: 12pt;
+}
+
+body {
+  margin: 0 !important; /* very important for pdf save */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h1,
+pre {
   background-color: ghostwhite;
 }
 h1,
@@ -7,14 +23,19 @@ h3 {
   text-align: center;
 }
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
 li {
   margin: 0.5em;
 }
 body ol > li {
   margin-bottom: 3em;
+}
+body ol > li > pre {
+  margin-left: -5mm;
+}
+body ol > li > p {
+  background-color: ghostwhite;
+  margin-left: -5mm;
+  font-weight: bold;
 }
 
 .checkmark {
@@ -28,6 +49,6 @@ body ol > li {
   font-style: italic;
   font-weight: bolder;
 }
-.hljs-string {
-    color: firebrick;
+.hljs-number {
+  font-weight: bolder;
 }
