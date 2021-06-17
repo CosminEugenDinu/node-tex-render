@@ -11,30 +11,16 @@ const htmlFile = process.argv[1];
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  // await page.goto(`http://localhost:8888/articles/${articleDirName}`, {
-  //   waitUntil: "networkidle2",
-  // });
+
   const htmlContent = fs.readFileSync("./articles/built/file.html", "utf8");
-  await page.setContent(htmlContent, {
-    // waitUntil: "networkidle2",
-    // waitUntil: "domcontentloaded",
-    // waitUntil: "load",
-  });
-  // await page.goto(
-  //   `file:///home/cos/nodejs-tex-render/articles/built/file.html`,
-  //   {
-  //     waitUntil: "networkidle2",
-  //   }
-  // );
+  await page.setContent(htmlContent);
 
   // await page.pdf({
   //   path: `./articles/built/${articleDirName}.pdf`,
   //   printBackground: true,
   //   preferCSSPageSize: true,
   // });
-  // page.evaluate(() => ((window as any).PagedConfig = { auto: false }));
   await page.evaluate(() => {
-    // (window as any).PagedConfig = (window as any).PagedConfig || {};
     (window as any).PagedConfig = {};
     (window as any).PagedConfig.auto = true;
     (window as any).PagedConfig.after = () => {
@@ -45,18 +31,18 @@ const htmlFile = process.argv[1];
   const st = await page.addScriptTag({
     path: "public/paged.js",
   });
+  const watchDog = await page.waitForFunction('window.ready === "done"');
+  await watchDog;
+  const innerHTML = await page.evaluate(() => {
+    for (const script of document.head.querySelectorAll("script"))
+      script.remove();
+    return document.body.innerHTML;
+  });
+  const htmlFinalContent = await page.content();
 
   let fileHandle = null;
   try {
     fileHandle = await open("./articles/built/html-built.html", "w");
-    const watchDog = await page.waitForFunction('window.ready === "done"');
-    await watchDog;
-    const innerHTML = await page.evaluate(() => {
-      for (const script of document.head.querySelectorAll("script"))
-        script.remove();
-      return document.body.innerHTML;
-    });
-    const htmlFinalContent = await page.content();
     fileHandle.write(htmlFinalContent);
   } finally {
     fileHandle?.close();
